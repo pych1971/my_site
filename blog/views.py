@@ -12,7 +12,7 @@ def posts(request):
     return HttpResponse('Все посты блога')
 
 
-def get_name_of_post(request, name_post):
+def get_post_by_name(request, name_post):
     return HttpResponse(f'Информация о посте {name_post}')
 
 
