@@ -16,11 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blog.views import home, posts, get_name_of_post
+from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
-    path('posts/', posts),
-    path('posts/<name_post>/', get_name_of_post)
+    path('', views.home),
+    path('posts/', views.posts),
+    path('posts/<int:number_post>/', views.get_post_by_number),
+    path('posts/<name_post>/', views.get_name_of_post),
 ]
