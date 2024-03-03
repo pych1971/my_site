@@ -6,12 +6,11 @@ from django.template.loader import render_to_string
 # Create your views here.
 
 def home(request):
-    response = render_to_string('blog/index.html')
-    return HttpResponse(response)
+    return render(request, 'blog/index.html')
 
 
 def posts(request):
-    return HttpResponse('Все посты блога')
+    return render(request, 'blog/list_detail.html')
 
 
 def get_post_by_name(request, name_post):
