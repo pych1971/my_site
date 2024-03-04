@@ -14,8 +14,14 @@ def posts(request):
 
 
 def get_post_by_name(request, name_post):
-    return HttpResponse(f'Информация о посте {name_post}')
+    data = {
+        'name_post': name_post,
+    }
+    return render(request, 'blog/detail_by_name.html', context=data)
 
 
 def get_post_by_number(request, number_post):
-    return HttpResponse(f'Здесь содержится информация о посте под номером {number_post}')
+    data = {
+        'number_post': number_post,
+    }
+    return render(request, 'blog/detail_by_number.html', context=data)
