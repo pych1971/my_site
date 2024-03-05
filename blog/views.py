@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from random import shuffle
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 
@@ -52,8 +53,9 @@ data_post = [
 # Create your views here.
 
 def home(request):
+    shuffle(data_post)
     context = {
-        'data_post': data_post
+        'data_post': data_post[0:3]
     }
     return render(request, 'blog/index.html', context=context)
 
